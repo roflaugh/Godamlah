@@ -1,0 +1,91 @@
+# User Education Program on Password Hygiene
+
+# README.md
+# This program is an interactive educational tool to teach users about password hygiene.
+# Users can navigate through topics like creating strong passwords, avoiding pitfalls, and recognizing phishing scams.
+
+class PasswordHygieneProgram:
+    def __init__(self):
+        self.topics = [
+            "Why Password Security Matters",
+            "Creating Strong Passwords",
+            "Avoiding Common Password Pitfalls",
+            "Using Password Managers",
+            "Recognizing and Avoiding Phishing Scams",
+            "The Importance of Multi-Factor Authentication (MFA)"
+        ]
+
+    def display_topics(self):
+        print("Welcome to the Password Hygiene Program! Here are the topics we'll cover:")
+        for i, topic in enumerate(self.topics, start=1):
+            print(f"{i}. {topic}")
+
+    def create_strong_password(self):
+        print("\nTips for Creating Strong Passwords:")
+        print("- Use at least 12 characters, including upper and lower case letters, numbers, and special symbols.")
+        print("- Avoid using personal information like your name, birthdate, or common words.")
+        print("- Don’t reuse passwords across different accounts.")
+
+    def introduce_password_managers(self):
+        print("\nPassword Managers:")
+        print("- Password managers can generate and store complex passwords securely.")
+        print("- Examples include LastPass, 1Password, and Dashlane.")
+        print("- Always protect your password manager with a strong master password.")
+
+    def discuss_phishing_scams(self):
+        print("\nRecognizing and Avoiding Phishing Scams:")
+        print("- Be cautious of unexpected emails or messages asking for sensitive information.")
+        print("- Verify links before clicking by hovering over them to see the actual URL.")
+        print("- Use anti-phishing tools and report suspicious emails.")
+
+    def emphasize_mfa(self):
+        print("\nThe Importance of Multi-Factor Authentication (MFA):")
+        print("- MFA adds an extra layer of security by requiring a second verification step.")
+        print("- Common methods include SMS codes, authentication apps, or biometric scans.")
+        print("- Enable MFA wherever possible, especially for critical accounts like email and banking.")
+
+    def run_program(self):
+        self.display_topics()
+        while True:
+            print("\nChoose a topic to learn more (or type 'exit' to quit):")
+            for i, topic in enumerate(self.topics, start=1):
+                print(f"{i}. {topic}")
+            choice = input("Enter the number of your choice: ").strip()
+
+            if choice.lower() == 'exit':
+                print("Thank you for participating in the Password Hygiene Program. Stay secure!")
+                break
+
+            if choice.isdigit():
+                choice = int(choice)
+                if choice == 1:
+                    print("\nWhy Password Security Matters:")
+                    print("- Weak or reused passwords are a leading cause of account breaches.")
+                    print("- Strong passwords help protect personal and sensitive information.")
+                elif choice == 2:
+                    self.create_strong_password()
+                elif choice == 3:
+                    print("\nAvoiding Common Password Pitfalls:")
+                    print("- Don’t use predictable passwords like 'password123' or 'qwerty'.")
+                    print("- Regularly update your passwords to reduce the risk of compromise.")
+                elif choice == 4:
+                    self.introduce_password_managers()
+                elif choice == 5:
+                    self.discuss_phishing_scams()
+                elif choice == 6:
+                    self.emphasize_mfa()
+                else:
+                    print("Invalid choice. Please select a valid topic.")
+            else:
+                print("Invalid input. Please enter a number or 'exit'.")
+
+if __name__ == "__main__":
+    program = PasswordHygieneProgram()
+    program.run_program()
+
+# .gitignore
+# Exclude unnecessary files and directories.
+# Example:
+# __pycache__/
+# *.pyc
+# .vscode/
